@@ -1,57 +1,46 @@
 <!DOCTYPE html>
 <html>
- <head>
-   <title>
-     Carrer Portal
-   </title>
-   <meta charset="utf-8">
+  <head>
+    <title>Jovian Careers</title>
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-   <style>
-     #banner
-     {
-       width:100%;
-       height: 450px;
-       object-fit: cover;
-           
-     }
-   </style>
-   
-   
- </head>
-  
-
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <style>
+      #banner {
+        height: 360px;
+        width: 100%;
+        object-fit:cover;
+        margin-bottom: 16px;
+      }
+    </style>
+  </head>
   <body>
-
+    {% include 'nav.html' %}
+    <img class="img-fluid" id="banner" src="https://flask-tutorial--pankajkumar333.repl.co/static/banner.jpg" >
     <div class="container">
-    
-      <h1 class="text-center mt-4 mb-2" >Jovain Carrers</h1>
-    <img class= "img-fluid" id= "banner" src="https://flask-tutorial--pankajkumar333.repl.co/static/banner.jpg", width: 100px ,height:100px>
-    <h2 class="text-center  mt-2 mb-2" >About Jovain Careers</h2>
-
-    <p>
-      It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.
-    </p>
-
-    <h2 class="text-center" > Openings</h2>
-     <div>
-        {% for job in jobs %}
-        {% include 'jobitem.html' %}
-           
-          {% endfor %}
-      </div>
-  
-     <div style= text-align:center;>
-  <button class="btn btn-primary btn-lg" > contact us</button>
-      <p class="text-center mt-2">
-        Copyright 2022
+      <h1 class="text-center mt-2 mb-4">
+        Jovain Careers
+      </h1>
+      <div class="row" style="margin-bottom:32px">
+        <div class="col-md-6">
+      <p class="lead">
+        At Jovian, we’re on a mission to build the most highly reputed technical university in the world, and we’re building it completely online. Our flagship data science program helps working professionals with a background in programming or analytics make a career transition to data science. We also offer several free beginner-friendly courses and have a fast-growing community of 200,000+ users.Creating a website that runs a Python script in the backend and displays the shortlisted company names meeting certain criteria can be done using Flask.
       </p>
-     </div>
-    
+        </div>
+        <div class="d-none d-md-block col-md-6">
+        <img src="https://flask-tutorial--pankajkumar333.repl.co/static/people.jpg" style="height:320px;border-radius:4px;">
+        </div>
+      </div>
+      <h2 class="text-center mt-2 mb-4">Open Positions</h2>
+      <div>
+        {% for job in jobs %}
+          {% include 'jobitem.html' %}
+        {% endfor %}
+      </div>
+      <div class="text-center">
+      <a class="btn btn-primary btn-lg" href="mailto:pankajbhar262@gmail.com?subject=Question%20about%20Job%20Opernings&body=My%20name%3A%20%3Cyour%20name%20here%3E%0D%0A%0D%0AMy%20questions%3A%20%3Center%20question%20here%3E%0D%0A">Contact Us</a>
+      </div>
     </div>
-    
+    {% include 'footer.html' %}
   </body>
-
-  
 </html>
